@@ -132,5 +132,9 @@ body {
     main {
       padding: 10px;
     }
+
+    .product {
+        width: 100%;
+      }
   }
   
