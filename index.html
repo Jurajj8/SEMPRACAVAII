@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
-
 <body>
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#computers">Computers</a>
-        <a href="#pcParts">Computer Parts</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <header>
+    <h1>Moj responzívny web</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Domov</a></li>
+        <li><a href="#">Počítače</a></li>
+        <li class="dropdown">
+            <li><a href="#">Súčiastky</a></li>
+                <ul class="dropdown-content">
+                    <li><a href="#">Kategória 1</a></li>
+                    <li><a href="#">Kategória 2</a></li>
+                    <li><a href="#">Kategória 3</a></li>
+                </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      <h2>Vitajte na našom webe</h2>
+      <p>Toto je jednoduchý príklad responzívneho dizajnu.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Moj responzívny web</p>
+  </footer>
 </body>
-
-
 </html>
