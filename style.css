@@ -44,10 +44,23 @@ body {
 
   .dropdown-content {
     display: none;
-
-
+    position: absolute;
+    background-color: green;
+    min-width: 160px;
+    z-index: 1;
   }
-
+  
+  .dropdown-content li {
+    position: flex;
+    background-color: green;
+    min-width: 160px;
+  }
+  
+  .dropdown-content a {
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
   /* Zobrazenie dropdown obsahu po hoveri */
   nav li:hover .dropdown-content {
     display: table;
@@ -55,6 +68,31 @@ body {
     background-color: #333;
     margin: auto;
 
+  }
+
+  /*Produkty*/
+  .product {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .product img {
+    max-width: 100%;
+  }
+  
+  .price {
+    font-weight: bold;
+  }
+  
+  button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
   }
   
   /* Hlavný obsah */
