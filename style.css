@@ -1,161 +1,138 @@
-/* Základné štýly pre stránku */
-body {
-    max-width: 65%;
-    margin: auto;
-    font-family: Georgia, serif;
-    background-color: darkgrey;
-  }
-  
-  /* Header s navigáciou */
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  header h1 {
-    padding-left: 20px;
-    max-width: 30%;
-    padding-bottom: 10px;
-    font-size:larger;
-    display: inline;
-    float: left;
-    vertical-align: middle;
+@font-face {
+  font-family: font1;
+  src: url(font/SFFlorencesans.ttf);
 }
-  header h2 {
-    padding-right: 20px;
-    max-width: 30%;
-    padding-bottom: 10px;
-    font-size: medium;
-    display: inline;
-    float: right;
-    vertical-align: middle;
-  }
+:root {
+  --jumbotron-padding-y: 3rem;
+}
 
-  li.active {
-    background-color: dodgerblue;
-    color: white;
-  }
+p {
+  font-size: 18px;
+}
 
-  nav ul {
-    list-style: none;
-    display: inline;
-    justify-content: center;
-    padding: 0;
-  }
-  
-  nav li {
-    border-radius: 30px;
-    display: inline-block;
-    position: relative;
-    background-color: #333;
-  }
-  
-  nav li:hover {
-        background-color: rgb(0,104,251);
-  }
+.larger-text {
+  color: #fff; /* Původní barva textu (bílá) */
+  transition: color 0.5s; /* Plynulý přechod barvy textu */
+}
 
-  nav a {
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    padding: 15px 25px;
-  }
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
 
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    z-index: 1;
-  }
-  
-  .dropdown-content li {
-    margin: 5px;
-    position: flex;
-    min-width: 160px;
-  }
-  
-  .dropdown-content a {
-    color: #fff;
-    padding: 10px 20px;
-  }
-  
-  /* Zobrazenie dropdown obsahu po hoveri */
-  nav li:hover .dropdown-content {
-    display: table;
-    position: absolute;
-    margin: auto;
-    border-radius: 20px;
-    background-color:darkgrey;
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
 
-  }
+.jumbotron-heading {
+  font-weight: 300;
+}
 
-  /*Produkty*/
-  .product {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-    width: 300px;
-  }
-  
-  .product img {
-    max-width: 100%;
-  }
-  
-  .price {
-    font-weight: bold;
-  }
-  
-  button {
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Hlavný obsah */
-  main {
-    padding: 20px;
-  }
-  
-  .content {
-    background-color: #fff;
-    padding: 20px;
-  }
+.jumbotron .container {
+  max-width: 40rem;
+}
 
-  /* Footer */
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-  
- /* Responzívny dizajn */
-  @media screen and (max-width: 768px) {
-    header {
-      padding: 10px;
-    }
-  
-    nav ul {
-      text-align: center;
-      padding-top: 10px;
-    }
-  
-    nav li {
-      display: block;
-      margin: 10px 0;
-    }
-  
-    main {
-      padding: 10px;
-    }
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 
-    .product {
-        width: 100%;
-      }
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.custom-height {
+  width: 100%;
+  height: 45vh; /* 15% výšky obrazovky */
+  object-fit: cover; /* zachová pomery strán obrázku */
+}
+.square-image {
+  overflow: hidden;
+  position: relative;
+}
+
+.square-image img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.square-image:hover img {
+  transform: scale(1.1); /* Priblíži fotku o 10% */
+}
+/*Navbar*/
+.navbar {
+  background-color: #007bff;
+}
+
+/* Nav */
+.navbar-nav .nav-item .nav-link {
+  transition: transform 0.3s, filter 0.3s;
+}
+
+/*Fotogaléria*/
+.thumbnail {
+  position: relative;
+  overflow: hidden;
+}
+
+.thumbnail img {
+  transition: transform 0.5s;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.1);
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
   }
-  
+}
+
+/*Register*/
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Nastaví výšku na celou výšku okna */
+  max-width: 500px; /* Omezí maximální šířku formuláře */
+  margin: 0 auto; /* Uprostřed vodorovně */
+  padding: 15px;
+}
+
+/*50% rozmer obrázka*/
+.max-50 {
+  max-width: 70%;
+  max-height: 70%;
+  justify-content: center;
+  align-items: center;
+}
+
+.container.content-box {
+  width: 100%;
+  max-width: 500px; /* Nastavte maximálnu šírku podľa vašich preferencií */
+  margin: 0 auto; /* Horizontálne zarovnanie */
+  padding: 20px; /* Môžete nastaviť vnútorný odstup podľa vašich preferencií */
+  border: 1px solid #ccc; /* Okolo obdĺžnika */
+  border-radius: 10px; /* Zaoblené rohy */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tieň */
+}
+
+.checkbox-label {
+  margin-left: 10px; /* Prispůsobte vzdálenost podle potřeby */
+}
+
+.register-link {
+  margin-left: 10px; /* Prispůsobte vzdálenost podle potřeby */
+}
+
+nav .navbar-nav {
+  font-weight: 500;
+  font-size: larger;
+}
