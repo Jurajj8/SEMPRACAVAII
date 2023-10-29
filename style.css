@@ -11,8 +11,8 @@ p {
 }
 
 .larger-text {
-  color: #fff; /* Původní barva textu (bílá) */
-  transition: color 0.5s; /* Plynulý přechod barvy textu */
+  color: #fff;
+  transition: color 0.5s;
 }
 
 .jumbotron {
@@ -100,9 +100,9 @@ footer p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Nastaví výšku na celou výšku okna */
-  max-width: 500px; /* Omezí maximální šířku formuláře */
-  margin: 0 auto; /* Uprostřed vodorovně */
+  height: 100vh;
+  max-width: 500px;
+  margin: 0 auto;
   padding: 15px;
 }
 
@@ -116,20 +116,20 @@ footer p {
 
 .container.content-box {
   width: 100%;
-  max-width: 500px; /* Nastavte maximálnu šírku podľa vašich preferencií */
-  margin: 0 auto; /* Horizontálne zarovnanie */
-  padding: 20px; /* Môžete nastaviť vnútorný odstup podľa vašich preferencií */
-  border: 1px solid #ccc; /* Okolo obdĺžnika */
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
   border-radius: 10px; /* Zaoblené rohy */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tieň */
 }
 
 .checkbox-label {
-  margin-left: 10px; /* Prispůsobte vzdálenost podle potřeby */
+  margin-left: 10px;
 }
 
 .register-link {
-  margin-left: 10px; /* Prispůsobte vzdálenost podle potřeby */
+  margin-left: 10px;
 }
 
 nav .navbar-nav {
