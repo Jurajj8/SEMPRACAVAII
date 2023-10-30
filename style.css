@@ -10,7 +10,7 @@ body {
   color: #fff;
 }
 .jumbotron {
-  min-height: 70vh; /* 70 % výšky obrazovky */
+  min-height: 100vh; /* 70 % výšky obrazovky */
   background-image: url("res/products/land3.jpg");
   background-size: cover;
   position: relative;
@@ -189,4 +189,8 @@ footer p {
 nav .navbar-nav {
   font-weight: 500;
   font-size: larger;
+}
+
+#objednat {
+  padding-top: 150px; /* Přizpůsobte hodnotu podle výšky vaší fixed navigace */
 }
