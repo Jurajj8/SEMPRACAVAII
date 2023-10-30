@@ -5,10 +5,6 @@
 body {
   background-color: #fff;
 }
-.navbar {
-  background-color: #007bff;
-  color: #fff;
-}
 .jumbotron {
   min-height: 100vh; /* 70 % výšky obrazovky */
   background-image: url("res/products/land3.jpg");
@@ -36,6 +32,19 @@ body {
   z-index: -1; /* Zařízení pro zajištění, aby bylo pozadí pod obsahem */
 }
 
+/*aktívna stránka na navbare*/
+.nav-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px; /* Výška podtržení */
+  background-color: white; /* Barva podtržení */
+}
+
+#topNav {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  transition: background 0.5s;
+}
 .jumbotron h1,
 .jumbotron p,
 .jumbotron a {
@@ -54,7 +63,7 @@ body {
 }
 .feature i {
   font-size: 48px;
-  color: #007bff;
+  /*color: #007bff;*/
 }
 :root {
   --jumbotron-padding-y: 3rem;
@@ -119,9 +128,10 @@ footer p {
   transform: scale(1.1); /* Priblíži fotku o 10% */
 }
 /*Navbar*/
-.navbar {
-  background-color: #007bff;
-}
+/*.navbar {
+  background-color: #fdfef0;*/
+/*007bff,E70040, FDFEF0 
+}*/
 
 /* Nav */
 .navbar-nav .nav-item .nav-link {
@@ -193,4 +203,32 @@ nav .navbar-nav {
 
 #objednat {
   padding-top: 150px; /* Přizpůsobte hodnotu podle výšky vaší fixed navigace */
+}
+
+/* Pro obrazovky o šířce menší než 768px (typicky telefony) */
+@media (max-width: 767px) {
+  .jumbotron {
+    min-height: 100vh; /* Zachová 100% výšky obrazovky */
+    padding: 20px; /* Upraví odsazení pro menší vzdálenost od levého okraje */
+  }
+
+  .jumbotron::before {
+    filter: none; /* Zruší filtr na pozadí */
+  }
+
+  .jumbotron h1,
+  .jumbotron p,
+  .jumbotron a {
+    text-align: center; /* Znovu zarovná text na střed */
+    margin: 0; /* Odstraní levý okraj */
+    padding: 10px; /* Přidá padding pro lepší čitelnost */
+  }
+
+  .btn {
+    min-width: 50%;
+    margin: 0 auto; /* Vycentruje tlačítko na obrazovce */
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
 }

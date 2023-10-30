@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Marcela Lašová | Cukrárska výroba</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -30,23 +33,39 @@
     <link rel="icon" type="image/x-icon" href="res/favicon/favicon.png" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-light fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top" id="topNav">
       <div class="container" style="max-width: 85%">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div
           id="navbarCollapse"
           class="collapse navbar-collapse justify-content-between"
         >
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="index.html" class="nav-link">Domov</a>
+              <a href="index.html" class="nav-link active" style="color: white"
+                >Domov</a
+              >
             </li>
             <li class="nav-item">
-              <a href="lodne.html" class="nav-link">Lodne</a>
+              <a href="lodne.html" class="nav-link" style="color: white"
+                >Lodne</a
+              >
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                >Udalosti</a
+              <a
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                style="color: white"
               >
+                Udalosti
+              </a>
               <div class="dropdown-menu">
                 <a href="svadba.html" class="dropdown-item">Svadba</a>
                 <a href="oslava.html" class="dropdown-item">Oslava</a>
@@ -56,19 +75,21 @@
               </div>
             </li>
             <li class="nav-item">
-              <a href="fotog.html" class="nav-link">Fotogaléria</a>
+              <a href="fotog.html" class="nav-link" style="color: white"
+                >Fotogaléria</a
+              >
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="login.html" class="nav-link"
-                ><i class="fas fa-sign-in"></i>Login</a
-              >
+              <a href="login.html" class="nav-link" style="color: white">
+                <i class="fas fa-sign-in"></i>Login
+              </a>
             </li>
             <li class="nav-item">
-              <a href="register.html" class="nav-link"
-                ><i class="fas fa-user-check"></i>Register</a
-              >
+              <a href="register.html" class="nav-link" style="color: white">
+                <i class="fas fa-user-check"></i>Register
+              </a>
             </li>
           </ul>
         </div>
@@ -110,7 +131,7 @@
           <p>S pozdravom, Pani Marcela a celý tím cukrárov</p>
           <a href="lodne.html" class="btn btn-primary">Naše služby</a>
         </div>
-        <div class="col-md-6 d-flex justify-content-center">
+        <div class="col-md-6 d-flex mt-5 justify-content-center">
           <img
             src="res/fotogaleria/7.jpg"
             alt="Cukrárenský dort"
@@ -224,6 +245,17 @@
           });
         });
       });
+    </script>
+    <!-- Script pre objavenie navigácie na vrchu -->
+    <script>
+      window.onscroll = function () {
+        var navBar = document.getElementById("topNav");
+        if (window.scrollY === 0) {
+          navBar.style.top = "0";
+        } else {
+          navBar.style.top = "-100px"; // Upravte tuto hodnotu podle vašich potřeb
+        }
+      };
     </script>
 
     <footer class="footer mt-auto py-3 bg-light">
