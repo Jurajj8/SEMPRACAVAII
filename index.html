@@ -16,10 +16,6 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
-    />
-    <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
@@ -226,26 +222,18 @@
     <!-- Script pre hover navmenu -->
     <script>
       const navLinks = document.querySelectorAll(".nav-link");
+
       navLinks.forEach((link) => {
-        link.addEventListener("mouseover", () => {
-          navLinks.forEach((otherLink) => {
-            if (otherLink !== link) {
-              otherLink.style.transform = "scale(0.9)"; // Zmení veľkosť iných položiek
-              otherLink.style.filter = "brightness(0.7)"; // Ztmaví iné položky
-            }
-          });
-          link.style.transform = "scale(1.1)"; // Priblíži vybranú položku
-          link.style.filter = "brightness(1.2)"; // Zjasní vybranú položku
+        link.addEventListener("mouseenter", () => {
+          link.classList.add("custom-hover"); // Pridá triedu pre vlastný hover effect
         });
 
-        link.addEventListener("mouseout", () => {
-          navLinks.forEach((otherLink) => {
-            otherLink.style.transform = ""; // Vráti veľkosť iných položiek na normál
-            otherLink.style.filter = ""; // Vráti jas iných položiek na normál
-          });
+        link.addEventListener("mouseleave", () => {
+          link.classList.remove("custom-hover"); // Odobere triedu
         });
       });
     </script>
+
     <!-- Script pre objavenie navigácie na vrchu -->
     <script>
       window.onscroll = function () {
@@ -253,7 +241,7 @@
         if (window.scrollY === 0) {
           navBar.style.top = "0";
         } else {
-          navBar.style.top = "-100px"; // Upravte tuto hodnotu podle vašich potřeb
+          navBar.style.top = "-100px";
         }
       };
     </script>

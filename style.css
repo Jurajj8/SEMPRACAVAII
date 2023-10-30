@@ -1,24 +1,29 @@
 @font-face {
-  font-family: font1;
-  src: url(font/SFFlorencesans.ttf);
+  font-family: "MujVlastniFont";
+  src: url("font/Cabernet\ JF\ Pro.woff2") format("woff2");
 }
+
 body {
   background-color: #fff;
+  /*font-family: "MujVlastniFont", sans-serif !important;*/
 }
+
+/* Hlavný prvok "jumbotron" na domovskej stránke */
 .jumbotron {
-  min-height: 100vh; /* 70 % výšky obrazovky */
+  min-height: 100vh;
   background-image: url("res/products/land3.jpg");
   background-size: cover;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Zarovnat na levou stranu */
-  padding: 20px; /* Přidat odsazení (margin) pro větší vzdálenost od levého okraje */
-  text-align: left; /* Zarovnat text na levou stranu */
+  align-items: flex-start;
+  padding: 100px 0;
+  text-align: center;
   color: #fff;
 }
 
+/* Pridanie efektu rozmazania na pozadie "jumbotronu" */
 .jumbotron::before {
   content: "";
   background: inherit;
@@ -29,22 +34,25 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Zařízení pro zajištění, aby bylo pozadí pod obsahem */
+  z-index: -1;
 }
 
-/*aktívna stránka na navbare*/
+/* Štýl pre aktívnu položku v navigačnom menu */
 .nav-link.active::after {
   content: "";
   display: block;
   width: 100%;
-  height: 2px; /* Výška podtržení */
-  background-color: white; /* Barva podtržení */
+  height: 2px;
+  background-color: white;
 }
 
+/* Štýl navigačného menu */
 #topNav {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   transition: background 0.5s;
 }
+
+/* Bežné štýly pre text a odkazy v "jumbotron" */
 .jumbotron h1,
 .jumbotron p,
 .jumbotron a {
@@ -54,30 +62,40 @@ body {
   padding: 10px;
 }
 
+/* Špeciálny štýl pre odkazy v "jumbotron" */
 .jumbotron a {
-  width: 20%; /* Tlačítko bude na celou šířku obsahu jumbotronu */
+  width: 20%;
 }
+
+/* Štyly pre vlastnosti (features) */
 .feature {
   padding: 50px 0;
   text-align: center;
 }
+
+/* Štýly pre ikony v časti "funkcie" */
 .feature i {
   font-size: 48px;
-  /*color: #007bff;*/
-}
-:root {
-  --jumbotron-padding-y: 3rem;
 }
 
+/* Koreňové premenné pre nastavenia vzhľadu */
+:root {
+  --jumbotron-padding-y: 3rem;
+  --bs-body-font-family: "Roboto", sans-serif;
+}
+
+/* Bežné štýly odsekov */
 p {
   font-size: 18px;
 }
 
+/* Štýl pre text s triedou "larger-text" */
 .larger-text {
   color: #fff;
   transition: color 0.5s;
 }
 
+/* Zmena pozadia "jumbotronu" a ďalšie úpravy */
 .jumbotron {
   background-color: #007bff;
   color: #fff;
@@ -85,80 +103,89 @@ p {
   text-align: center;
 }
 
+/* Odstránenie spodného okraja posledného odseku v časti "jumbotron" */
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
 
+/* Štýl pre nadpisy v "jumbotron" */
 .jumbotron-heading {
   font-weight: 300;
 }
 
+/* Obmedzenie šírky kontajnera v "jumbotrone" */
 .jumbotron .container {
   max-width: 40rem;
 }
 
+/* Štýly pre pätičku */
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 
+/* Štýly pre odseky päty */
 footer p {
   margin-bottom: 0.25rem;
 }
 
+/* Štýl s efektom box-shadow */
 .box-shadow {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
+/* Vlastnosti obrázka v položke "custom-height" */
 .custom-height {
   width: 100%;
   height: 45vh; /* 15% výšky obrazovky */
-  object-fit: cover; /* zachová pomery strán obrázku */
+  object-fit: cover; /* zachová pomery stran obrazku */
 }
+
+/* Vlastnosti obrázkov v režime "square-image" so zväčšením pomocou hoveru */
 .square-image {
   overflow: hidden;
   position: relative;
 }
 
+/* Zväčšenie obrázka po prejdení myšou */
 .square-image img {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Zväčšenie obrázka po prejdení myšou */
 .square-image:hover img {
-  transform: scale(1.1); /* Priblíži fotku o 10% */
-}
-/*Navbar*/
-/*.navbar {
-  background-color: #fdfef0;*/
-/*007bff,E70040, FDFEF0 
-}*/
-
-/* Nav */
-.navbar-nav .nav-item .nav-link {
-  transition: transform 0.3s, filter 0.3s;
+  transform: scale(1.1); /* Přiblíží fotku o 10% */
 }
 
-/*Fotogaléria*/
-.thumbnail {
-  position: relative;
-  overflow: hidden;
-}
-
-.thumbnail img {
-  transition: transform 0.5s;
-}
-
-.thumbnail:hover img {
-  transform: scale(1.1);
-}
+/* Media pre väčšie obrazovky (šírka 768px a viac) */
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: calc(var(--jumbotron-padding-y) * 2);
     padding-bottom: calc(var(--jumbotron-padding-y) * 2);
   }
+
+  /* Úprava vzhľadu navigačného menu na väčších obrazovkách */
+  .navbar {
+    background-color: white;
+  }
+
+  /* Úprava farby textu v navigačnej ponuke */
+  .navbar-nav .nav-link {
+    color: white;
+  }
+
+  /* Úprava farby tlačidla hamburger menu */
+  .navbar-toggler-icon {
+    background-color: white;
+  }
+
+  /* Úprava farby pozadia tlačidla ponuky hamburger */
+  .navbar-toggler {
+    background-color: white;
+  }
 }
 
-/*Register*/
+/* Štýl registračného formulára */
 .form-signin {
   display: flex;
   flex-direction: column;
@@ -170,7 +197,7 @@ footer p {
   padding: 15px;
 }
 
-/*50% rozmer obrázka*/
+/* Obmedzenie veľkosti obrázka na 50 % */
 .max-50 {
   max-width: 70%;
   max-height: 70%;
@@ -178,57 +205,22 @@ footer p {
   align-items: center;
 }
 
+/* Štýl pre kontajner s ohraničením */
 .container.content-box {
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px; /* Zaoblené rohy */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tieň */
+  border: 1px solid;
 }
 
-.checkbox-label {
-  margin-left: 10px;
+/* Pôvodný štýl pre navigačné odkazy */
+.nav-link {
+  transition: transform 0.3s, filter 0.3s;
 }
 
-.register-link {
-  margin-left: 10px;
-}
-
-nav .navbar-nav {
-  font-weight: 500;
-  font-size: larger;
-}
-
-#objednat {
-  padding-top: 150px; /* Přizpůsobte hodnotu podle výšky vaší fixed navigace */
-}
-
-/* Pro obrazovky o šířce menší než 768px (typicky telefony) */
-@media (max-width: 767px) {
-  .jumbotron {
-    min-height: 100vh; /* Zachová 100% výšky obrazovky */
-    padding: 20px; /* Upraví odsazení pro menší vzdálenost od levého okraje */
-  }
-
-  .jumbotron::before {
-    filter: none; /* Zruší filtr na pozadí */
-  }
-
-  .jumbotron h1,
-  .jumbotron p,
-  .jumbotron a {
-    text-align: center; /* Znovu zarovná text na střed */
-    margin: 0; /* Odstraní levý okraj */
-    padding: 10px; /* Přidá padding pro lepší čitelnost */
-  }
-
-  .btn {
-    min-width: 50%;
-    margin: 0 auto; /* Vycentruje tlačítko na obrazovce */
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-  }
+/*Vlastný hover efekt na vagicáií*/
+.custom-hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
